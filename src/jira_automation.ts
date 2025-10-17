@@ -1,9 +1,14 @@
 import { getInput, setFailed, info } from "@actions/core";
 
+/**
+ * Normally one of "dev", "qa" or "main", at least in STC.
+ */
+type Branch = string;
+
 type PullRequest = {
   title: string;
   description: string;
-  branch: "dev" | "qa" | "main";
+  branch: Branch;
   prUrl: string;
 };
 
@@ -18,7 +23,7 @@ async function JiraAutomation() {
     const pr = {
       title: getInput("pr_title"),
       description: getInput("pr_description"),
-      branch: getInput("branch") as "dev" | "qa" | "main", // The branch the PR was merged into. This should be dev, qa or main
+      branch: getInput("branch") as Branch, // The branch the PR was merged into.
       prUrl: getInput("pr_url"),
     };
 
