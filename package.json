@@ -2,7 +2,7 @@
   "name": "jira-automation-action",
   "version": "1.0.0",
   "description": "GitHub Action to send webhooks to Jira when pull requests are merged",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "type": "module",
   "scripts": {
     "build": "rollup -c",

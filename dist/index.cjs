@@ -26802,7 +26802,7 @@ async function JiraAutomation() {
         const pr = {
             title: coreExports.getInput("pr_title"),
             description: coreExports.getInput("pr_description"),
-            branch: coreExports.getInput("branch"), // The branch the PR was merged into. This should be dev, qa or main
+            branch: coreExports.getInput("branch"), // The branch the PR was merged into.
             prUrl: coreExports.getInput("pr_url"),
         };
         const webhook = {
