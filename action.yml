@@ -1,0 +1,28 @@
+name: "Jira Automation Webhook"
+description: "Sends webhooks to Jira with a basic payload."
+
+inputs:
+  pr_title:
+    description: "The title of the pull request."
+    required: true
+  pr_description:
+    description: "The description of the pull request."
+    required: true
+  branch:
+    description: "The base branch of the pull request."
+    required: true
+  pr_url:
+    description: "The URL of the pull request."
+    required: true
+  jira_webhook_url:
+    description: "The webhook URL that moves tickets on the board."
+    required: true
+  jira_webhook_secret:
+    description: "The secret key for the webhook."
+    required: true
+  jira_ticket_code_prefix:
+    description: "The code prefix for Jira tickets. For example, if your tickets look like STC-123, the prefix is STC."
+    required: true
+runs:
+  using: "node20"
+  main: "dist/index.js"
